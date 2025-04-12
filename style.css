@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('bg.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Bloco de título/subtítulo */
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 80px; /* Mantém a margem maior */
+  color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+}
+.hero-content h1 { margin: 0 0 10px 0; font-size: 2em; color: #ffffff; }
+.hero-content p { margin: 0; font-size: 1.1em; color: #f0f0f0; }
+
+/* Container dos Botões Principais */
+.button-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1;
+  width: 90%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Botões Principais */
+.button-container button { padding: 12px 20px; font-size: 1em; cursor: pointer; border: none; border-radius: 6px; background-color: #007bff; color: white; transition: background-color 0.3s ease, transform 0.1s ease; }
+.button-container button:hover { background-color: #0056b3; }
+.button-container button:active { transform: scale(0.98); }
+
+/* Overlay dos Modais */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 100; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; overflow-y: auto; }
+
+/* Conteúdo INTERNO dos Modais */
+.modal-content { background: #333333; color: #f0f0f0; padding: 35px 25px 25px 25px; width: 90%; max-width: 720px; /* Mantém largura maior */ border-radius: 10px; display: flex; flex-direction: column; gap: 15px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+
+/* Título dentro do Modal */
+.modal-content h2 { margin: 0 0 10px 0; text-align: center; color: #ffffff; }
+
+/* Botão Fechar (X) dentro do Modal */
+.close-btn { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px; font-weight: bold; color: #bbbbbb; background: none; border: none; padding: 0 5px; line-height: 1; z-index: 10; }
+.close-btn:hover { color: #ffffff; }
+
+/* --- ESTILOS DO WRAPPER E DA TAG <video> --- */
+.video-wrapper {
+  width: 100%;          /* Ocupa a largura disponível */
+  background-color: #000; /* Fundo preto */
+  line-height: 0;       /* Evita espaços extras */
+}
+
+.video-wrapper video {
+  display: block; /* Remove espaço extra abaixo do vídeo */
+  width: 100%;   /* Faz o vídeo ocupar a largura do wrapper */
+  height: auto;  /* Mantém a proporção original do vídeo */
+  max-height: calc(80vh - 100px); /* Limita altura máxima em telas altas */
+}
+/* ----------------------------------------- */
+
+/* Inputs de Texto/Telefone */
+.form-container input[type="text"],
+.form-container input[type="tel"] { padding: 10px; border: 1px solid #555555; background-color: #444444; color: #ffffff; border-radius: 4px; font-size: 1em; }
+.form-container input::placeholder { color: #bbbbbb; opacity: 1; }
+.form-container input:-ms-input-placeholder { color: #bbbbbb; }
+.form-container input::-ms-input-placeholder { color: #bbbbbb; }
+.form-container input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.4); }
+
+/* Botão ENVIAR dentro do Modal de Formulário */
+.form-container button { padding: 12px 20px; font-size: 1em; cursor: pointer; border: none; border-radius: 6px; background-color: #007bff; color: white; transition: background-color 0.3s ease; }
+.form-container button:hover { background-color: #0056b3; }
+.form-container button:disabled { background-color: #555; color: #aaa; cursor: not-allowed; }
+
+/* Classe sr-only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
+/* Mensagens de Feedback */
+.feedback-message { font-size: 0.9em; color: #ff8a8a; text-align: center; min-height: 1.2em; margin-top: 5px; }
+
+/* Media Query */
+@media (max-width: 600px) {
+  .hero-content { margin-top: 40px; }
+  .hero-content h1 { font-size: 1.5em; }
+  .hero-content p { font-size: 1em; }
+  .button-container { padding: 15px 20px; max-width: 95%; }
+  .modal-content { padding: 30px 15px 15px 15px; max-width: 95%; }
+  .video-wrapper video { max-height: calc(80vh - 80px); /* Ajuste menor para mobile */ }
+}

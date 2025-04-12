@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assistente Virtual - Simulação e Contato</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hero-content">
+    <h1>Bem-vindo!</h1>
+    <p>Simule agora ou fale com um especialista.</p>
+  </div>
+
+  <div class="button-container">
+    <button onclick="abrirFormulario()">Fazer uma simulação</button>
+    <button onclick="abrirInfoModal()">nao conte com a sorte</button>
+    <button onclick="falarComConsultor()">Falar com consultor</button>
+  </div>
+
+  <div id="formularioPopup" class="modal-overlay">
+    <div class="form-container modal-content">
+      <button class="close-btn" onclick="fecharFormulario()" aria-label="Fechar formulário">×</button>
+      <h2>Simulação Rápida</h2>
+      <label for="nome" class="sr-only">Nome</label>
+      <input type="text" id="nome" placeholder="Nome Completo" required />
+      <label for="numero" class="sr-only">Telefone</label>
+      <input type="tel" id="numero" placeholder="Telefone (DDD + Número)" required />
+      <label for="cidade" class="sr-only">Cidade</label>
+      <input type="text" id="cidade" placeholder="Sua Cidade" required />
+      <label for="modelo" class="sr-only">Modelo do veículo</label>
+      <input type="text" id="modelo" placeholder="Modelo do Veículo" required />
+      <label for="placa" class="sr-only">Placa</label>
+      <input type="text" id="placa" placeholder="Placa do Veículo" required />
+      <button id="btnEnviarSimulacao" onclick="enviarSimulacao()">Enviar via WhatsApp</button>
+      <p id="formFeedback" class="feedback-message"></p>
+    </div>
+  </div>
+
+  <div id="infoPopup" class="modal-overlay">
+    <div class="modal-content">
+       <button class="close-btn" onclick="fecharInfoModal()" aria-label="Fechar vídeo">×</button>
+       <h2>Vídeo Explicativo</h2>
+       <div class="video-wrapper">
+          <video controls width="100%" preload="metadata" style="display: block;" autoplay muted>
+             <source src="seu_video.mp4" type="video/mp4">
+             Seu navegador não suporta a tag de vídeo.
+          </video>
+       </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
