@@ -1,5 +1,5 @@
 // === ATENÇÃO: NÚMERO DE WHATSAPP (Mantenha o seu) ===
-const seuNumeroWhatsApp = '55119XXXXXXXX';
+const seuNumeroWhatsApp = '5511945731548';
 // ======================================================
 
 const formularioPopup = document.getElementById('formularioPopup');
